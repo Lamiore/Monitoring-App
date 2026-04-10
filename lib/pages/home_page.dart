@@ -16,10 +16,7 @@ class HomePage extends StatelessWidget {
             Container(
               width: 8,
               height: 8,
-              decoration: const BoxDecoration(
-                color: Color(0xFF00FFB3),
-                shape: BoxShape.circle,
-              ),
+              decoration: const BoxDecoration(color: Color(0xFF00FFB3), shape: BoxShape.circle),
             ),
           ],
         ),
