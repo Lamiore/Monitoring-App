@@ -37,7 +37,7 @@ class SensorCard extends StatelessWidget {
             label,
             style: const TextStyle(
               color: Color(0xFF8BAABE),
-              fontSize: 11,
+              fontSize: 12,
             ),
             textAlign: TextAlign.center,
             maxLines: 1,
@@ -48,7 +48,7 @@ class SensorCard extends StatelessWidget {
             value,
             style: TextStyle(
               color: accentColor,
-              fontSize: 26,
+              fontSize: 28,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -56,7 +56,7 @@ class SensorCard extends StatelessWidget {
             unit,
             style: const TextStyle(
               color: Color(0xFF8BAABE),
-              fontSize: 10,
+              fontSize: 12,
             ),
           ),
         ],
