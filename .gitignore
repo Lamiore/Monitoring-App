@@ -1,3 +1,6 @@
+# Superpowers AI-generated docs
+docs/superpowers/
+
 # Miscellaneous
 *.class
 *.log
@@ -27,6 +30,7 @@ migrate_working_dir/
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
+.flutter-plugins
 .flutter-plugins-dependencies
 .pub-cache/
 .pub/
@@ -43,3 +47,26 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Gradle cache & wrapper
+.gradle/
+android/.gradle/
+android/local.properties
+
+# iOS build artifacts
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+
+# macOS
+macos/Flutter/GeneratedPluginRegistrant.swift
+macos/Flutter/ephemeral/
+
+# Environment / secrets
+.env
+.env.*
+*.pem
+*.key
+google-services.json
+GoogleService-Info.plist
