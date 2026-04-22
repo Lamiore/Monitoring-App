@@ -70,3 +70,6 @@ macos/Flutter/ephemeral/
 *.key
 google-services.json
 GoogleService-Info.plist
+
+# Firmware (ESP32 .ino — berisi WiFi/device credentials)
+firmware/
