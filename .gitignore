@@ -1,6 +1,12 @@
 # Superpowers AI-generated docs
 docs/superpowers/
 
+# Python backend (runs locally, not deployed to Vercel)
+Proyek_Karang/
+
+# Vercel
+.vercel/
+
 # Miscellaneous
 *.class
 *.log

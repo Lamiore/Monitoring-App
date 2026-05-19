@@ -17,46 +17,79 @@ class SensorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 140,
-      height: 160,
+      width: 150,
+      height: 170,
       decoration: BoxDecoration(
-        color: const Color(0xFF1A1A1A),
-        borderRadius: BorderRadius.circular(4),
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0xFF1F1F1F), Color(0xFF141414)],
+        ),
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(color: const Color(0xFF2A2A2A), width: 1),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.25),
+            blurRadius: 12,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(18),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Icon(icon, color: const Color(0xFF555555), size: 20),
+          Container(
+            width: 36,
+            height: 36,
+            decoration: BoxDecoration(
+              color: const Color(0xFF232323),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            alignment: Alignment.center,
+            child: Icon(icon, color: const Color(0xFFAAAAAA), size: 18),
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                value,
-                style: const TextStyle(
-                  color: Color(0xFFEEEEEE),
-                  fontSize: 30,
-                  fontWeight: FontWeight.w300,
-                  letterSpacing: -1,
-                  height: 1,
-                ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Flexible(
+                    child: Text(
+                      value,
+                      style: const TextStyle(
+                        color: Color(0xFFEEEEEE),
+                        fontSize: 30,
+                        fontWeight: FontWeight.w300,
+                        letterSpacing: -1,
+                        height: 1,
+                      ),
+                    ),
+                  ),
+                  if (unit.isNotEmpty) ...[
+                    const SizedBox(width: 4),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 3),
+                      child: Text(
+                        unit,
+                        style: const TextStyle(
+                          color: Color(0xFF777777),
+                          fontSize: 11,
+                          letterSpacing: 1.2,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                  ],
+                ],
               ),
-              const SizedBox(height: 4),
-              Text(
-                unit,
-                style: const TextStyle(
-                  color: Color(0xFF555555),
-                  fontSize: 11,
-                  letterSpacing: 1.5,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 10),
               Text(
                 label.toUpperCase(),
                 style: const TextStyle(
-                  color: Color(0xFF444444),
+                  color: Color(0xFF555555),
                   fontSize: 9,
                   letterSpacing: 2.0,
                   fontWeight: FontWeight.w500,

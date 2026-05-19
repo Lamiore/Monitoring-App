@@ -13,12 +13,11 @@ void main() {
               label: 'Arus Air',
               value: '0.8',
               unit: 'm/s',
-              accentColor: Color(0xFF00D4FF),
             ),
           ),
         ),
       );
-      expect(find.text('Arus Air'), findsOneWidget);
+      expect(find.text('ARUS AIR'), findsOneWidget);
     });
 
     testWidgets('menampilkan value dan unit', (tester) async {
@@ -30,7 +29,6 @@ void main() {
               label: 'Suhu',
               value: '28.5',
               unit: '°C',
-              accentColor: Color(0xFFFF6B6B),
             ),
           ),
         ),
@@ -48,7 +46,6 @@ void main() {
               label: 'Kelembapan',
               value: '85',
               unit: '%',
-              accentColor: Color(0xFF00FFB3),
             ),
           ),
         ),
