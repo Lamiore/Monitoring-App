@@ -17,7 +17,6 @@ class SensorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150,
       height: 170,
       decoration: BoxDecoration(
         gradient: const LinearGradient(

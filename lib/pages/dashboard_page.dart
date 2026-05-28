@@ -48,64 +48,87 @@ class DashboardPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  SensorCard(
-                    icon: Icons.thermostat,
-                    label: 'Suhu Udara',
-                    value: data.tempDHT.toStringAsFixed(1),
-                    unit: '°C',
-                  ),
-                  const SizedBox(width: 12),
-                  SensorCard(
-                    icon: Icons.water_drop,
-                    label: 'Kelembapan',
-                    value: data.humidity.toStringAsFixed(0),
-                    unit: '%',
-                  ),
-                  const SizedBox(width: 12),
-                  SensorCard(
-                    icon: Icons.device_thermostat,
-                    label: 'Suhu Air',
-                    value: data.tempDS18.toStringAsFixed(1),
-                    unit: '°C',
-                  ),
-                  const SizedBox(width: 12),
-                  SensorCard(
-                    icon: Icons.cloud,
-                    label: 'Cuaca',
-                    value: data.rainStatus,
-                    unit: '',
-                  ),
-                  const SizedBox(width: 12),
-                  SensorCard(
-                    icon: Icons.air,
-                    label: 'Angin',
-                    value: data.windSpeed.toStringAsFixed(1),
-                    unit: 'km/h',
-                  ),
-                  const SizedBox(width: 12),
-                  SensorCard(
-                    icon: Icons.water,
-                    label: 'Debit Air',
-                    value: data.flowRate.toStringAsFixed(2),
-                    unit: 'L/min',
-                  ),
-                  const SizedBox(width: 12),
-                  SensorCard(
-                    icon: Icons.bolt,
-                    label: 'Nutrisi EC',
-                    value: data.ecValue.toStringAsFixed(2),
-                    unit: 'ms/cm',
-                  ),
-                ],
-              ),
-            ),
+            _SensorGrid(data: data),
           ],
         ),
       ),
+    );
+  }
+}
+
+class _SensorGrid extends StatelessWidget {
+  final SensorData data;
+
+  const _SensorGrid({required this.data});
+
+  @override
+  Widget build(BuildContext context) {
+    final cards = <Widget>[
+      SensorCard(
+        icon: Icons.thermostat,
+        label: 'Suhu Udara',
+        value: data.tempDHT.toStringAsFixed(1),
+        unit: '°C',
+      ),
+      SensorCard(
+        icon: Icons.water_drop,
+        label: 'Kelembapan',
+        value: data.humidity.toStringAsFixed(0),
+        unit: '%',
+      ),
+      SensorCard(
+        icon: Icons.device_thermostat,
+        label: 'Suhu Air',
+        value: data.tempDS18.toStringAsFixed(1),
+        unit: '°C',
+      ),
+      SensorCard(
+        icon: Icons.cloud,
+        label: 'Cuaca',
+        value: data.rainStatus,
+        unit: '',
+      ),
+      SensorCard(
+        icon: Icons.air,
+        label: 'Angin',
+        value: data.windSpeed.toStringAsFixed(1),
+        unit: 'km/h',
+      ),
+      SensorCard(
+        icon: Icons.water,
+        label: 'Debit Air',
+        value: data.flowRate.toStringAsFixed(2),
+        unit: 'L/min',
+      ),
+      SensorCard(
+        icon: Icons.bolt,
+        label: 'Nutrisi EC',
+        value: data.ecValue.toStringAsFixed(2),
+        unit: 'ms/cm',
+      ),
+    ];
+
+    const spacing = 12.0;
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final width = constraints.maxWidth;
+        final columns = width >= 1000
+            ? 4
+            : width >= 700
+                ? 3
+                : 2;
+        final itemWidth =
+            (width - spacing * (columns - 1)) / columns;
+        return Wrap(
+          spacing: spacing,
+          runSpacing: spacing,
+          children: [
+            for (final card in cards)
+              SizedBox(width: itemWidth, child: card),
+          ],
+        );
+      },
     );
   }
 }

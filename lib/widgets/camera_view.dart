@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'mjpeg_stream.dart';
+import 'mjpeg_view.dart';
 
 class CameraView extends StatelessWidget {
   final String? streamUrl;

@@ -8,5 +8,5 @@
 /// 'http://192.168.1.10:5001/video_feed'
 class AppConfig {
   static const String cameraStreamUrl =
-      'https://7800-2001-448a-7062-2209-e4b7-5d5f-5d4c-4c2e.ngrok-free.app/video_feed';
+      'http://127.0.0.1:5001/video_feed';
 }

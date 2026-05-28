@@ -1,0 +1,81 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ===== Virtual environments =====
+venv/
+venv_mac/
+venv_win/
+.venv/
+env/
+ENV/
+
+# ===== Jupyter =====
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ===== YOLO / ML training outputs =====
+runs/
+wandb/
+mlruns/
+*.cache
+labels.cache
+
+# ===== Model weights (besar, sebaiknya simpan di Releases / LFS) =====
+*.pt
+*.pth
+*.onnx
+*.engine
+*.tflite
+*.h5
+*.pkl
+
+# ===== Dataset (gambar mentah & augmented, biasanya tidak di-push) =====
+dataset/
+aug_dataset/
+train/
+val/
+test_images/
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tif
+*.tiff
+*.mp4
+*.avi
+*.mov
+
+# ===== Output prediksi =====
+predictions/
+output/
+results/
+
+# ===== IDE / OS =====
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# ===== Logs =====
+*.log
+logs/
+
+# ===== Flask / runtime =====
+instance/
+.flaskenv
+*.sqlite
+*.db
+
+# ===== Secrets =====
+.env
+.env.*
+*.key
+*.pem
+config_local.py

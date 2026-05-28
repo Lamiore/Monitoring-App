@@ -1,0 +1,36 @@
+# ===== Arduino IDE build artifacts =====
+build/
+*.bin
+*.elf
+*.hex
+*.map
+*.eep
+
+# ===== PlatformIO =====
+.pio/
+.pioenvs/
+.piolibdeps/
+.vscode/
+.clang_complete
+.gcc-flags.json
+
+# ===== ESP-IDF =====
+sdkconfig.old
+managed_components/
+dependencies.lock
+
+# ===== Credentials / Secrets =====
+# JANGAN commit kredensial WiFi, API key, token, dsb.
+# Simpan di file terpisah & ignore:
+secrets.h
+credentials.h
+wifi_credentials.h
+config_secret.h
+*.local.h
+
+# ===== OS / IDE =====
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+*~
